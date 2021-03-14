@@ -52,6 +52,9 @@ def calc_smooth_mean(df, by, on, m):
     - DataFrame included “Feature_Kfold_mean_Enc”
     - *Note that, if a fold is not included, for example, “B” categorical variable, thus, it results of NAN which we fill NAN with the global mean of the target.*
     ```python
+    from sklearn import base
+    from sklearn.model_selection import KFold
+    
     class KFoldTargetEncoderTrain(base.BaseEstimator, base.TransformerMixin):
 
         def __init__(self, colnames,targetName,n_fold=5,verbosity=True,discardOriginal_col=False):
